@@ -28,7 +28,10 @@ function secondLargestInArray(arr) {
         }
     }
 
-    return second_largest;
+    return {
+        "first_largest": first_largest,
+        "second_largest": second_largest,
+    };
 
 }
 let arr = [4, 9, 0, 2, 8, 7, 1];//[10,20,20]
