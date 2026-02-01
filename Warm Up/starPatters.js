@@ -128,3 +128,31 @@ function fifthPattern(n) {
 
 /* let result = fifthPattern(5)
 console.log(result); */
+
+
+function sixthPattern(n){
+    /*
+        *
+       **
+      ***
+     ****
+    ***** 
+    */
+   
+    let pattern = "";
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        // spaces
+        for (let j = 0; j < n - (i + 1); j++) {
+            row += " ";
+        }
+        // stars
+        for (let k = 0; k < i + 1; k++) {
+            row += "*";
+        }
+        pattern += row + "\n";
+    }
+    return pattern;
+}
+/* let result = sixthPattern(5)
+console.log(result); */
