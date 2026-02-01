@@ -190,3 +190,31 @@ function seventhPattern(n) {
 
 /* let result = seventhPattern(5);
 console.log(result); */
+
+
+
+
+function seventhPattern(n) {
+    /*  1
+        01
+        010
+        1010
+        10101 
+    */
+    let pattern = "";
+    let toggle = 1;
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        
+        for (let j = 0; j <= i; j++) {
+            row += toggle;
+            toggle = toggle == 1 ? 0 : 1
+        }
+
+        pattern += row + '\n'
+    }
+    return pattern;
+}
+
+/* let result = seventhPattern(5)
+console.log(result); */
