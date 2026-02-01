@@ -80,3 +80,28 @@ function thirdPattern(n) {
 
 /* let result = thirdPattern(5);
 console.log(result); */
+
+
+function forthPattern(n) {
+    /* 
+        1
+        22
+        333
+        4444
+        55555  
+    */
+
+    let pattern = ""
+    for (let i = 0; i <= n; i++) {
+        let row = ""
+        for (let j = 0; j <= i; j++) {
+            row += i+1
+        }
+        pattern += row + '\n'
+    }
+
+    return pattern
+}
+
+/* let result = forthPattern(5)
+console.log(result); */
