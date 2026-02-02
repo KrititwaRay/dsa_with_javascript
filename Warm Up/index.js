@@ -134,24 +134,24 @@ function fifthPattern(n) {
 
 function sixthPattern(n) {
 
-     /*
-        *
-       **
-      ***
-     ****
-    ***** 
-    */
+    /*
+       *
+      **
+     ***
+    ****
+   ***** 
+   */
 
     let pattern = ""
     for (let i = 0; i < n; i++) {
         let row = ""
-        for (let j = 0; j < n - (i +1); j++) {
+        for (let j = 0; j < n - (i + 1); j++) {
             //5 - (0 + 1) 4   ....
             //5 - (1 + 1) 3   ...
             //5 - (2 + 1) 2   ..
             //5 - (3 + 1) 1   .
             //5 - (4 + 1) 0   
-            row += " " 
+            row += " "
         }
         for (let k = 0; k <= i; k++) {
             row += "*"
@@ -165,5 +165,40 @@ function sixthPattern(n) {
 
 
 
-let result = sixthPattern(5);
+// let result = sixthPattern(5);
+// console.log(result);
+
+
+
+function seventhPattern(n) {
+    /* 
+        1
+        10
+        101
+        1010
+        10101
+        101010
+
+    */
+
+
+    let pattern = ""
+
+
+    for (let i = 0; i <= n; i++) {
+        let row = ""
+        let number = 1
+        for (let j = 0; j < i; j++) {
+
+            row += number
+            number = number == 1? 0 : 1
+        }
+        pattern += row + "\n"
+    }
+
+    return pattern
+
+}
+
+let result = seventhPattern(5);
 console.log(result);
