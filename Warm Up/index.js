@@ -103,21 +103,21 @@ function forthPattern(n) {
 
 // let result = forthPattern(5)
 // console.log(result);
-function fifthPattern(n){
+function fifthPattern(n) {
 
-     /*  12345
-         1234
-         123
-         12
-         1
-     */
+    /*  12345
+        1234
+        123
+        12
+        1
+    */
 
     let pattern = "";
 
-    for(let i=0; i<n;i++){
+    for (let i = 0; i < n; i++) {
         let row = ""
-        for(let j=0; j<n - i; j++){
-            row += j +1
+        for (let j = 0; j < n - i; j++) {
+            row += j + 1
 
         }
         pattern += row + '\n'
@@ -130,3 +130,40 @@ function fifthPattern(n){
 
 // let result = fifthPattern(5)
 // console.log(result);
+
+
+function sixthPattern(n) {
+
+     /*
+        *
+       **
+      ***
+     ****
+    ***** 
+    */
+
+    let pattern = ""
+    for (let i = 0; i < n; i++) {
+        let row = ""
+        for (let j = 0; j < n - (i +1); j++) {
+            //5 - (0 + 1) 4   ....
+            //5 - (1 + 1) 3   ...
+            //5 - (2 + 1) 2   ..
+            //5 - (3 + 1) 1   .
+            //5 - (4 + 1) 0   
+            row += " " 
+        }
+        for (let k = 0; k <= i; k++) {
+            row += "*"
+        }
+        pattern += row + "\n"
+    }
+
+    return pattern;
+
+}
+
+
+
+let result = sixthPattern(5);
+console.log(result);
