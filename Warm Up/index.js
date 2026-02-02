@@ -21,25 +21,25 @@ function firstPattern(n) {
 // console.log(result);
 
 
-function secondPattern(n){
-      /* 
-        *
-        ** 
-        ***  
-        **** 
-    */
-        let pattern = ""
+function secondPattern(n) {
+    /* 
+      *
+      ** 
+      ***  
+      **** 
+  */
+    let pattern = ""
 
-        for(let i=0;i<n; i++){
-            let row = ""
-            for(let j = 0; j<i; j++){
+    for (let i = 0; i < n; i++) {
+        let row = ""
+        for (let j = 0; j < i; j++) {
 
-                row += "*"
+            row += "*"
 
-            }
-            pattern += row + "\n"
         }
-        return  pattern
+        pattern += row + "\n"
+    }
+    return pattern
 
 }
 
@@ -48,3 +48,29 @@ function secondPattern(n){
 
 
 
+function thirdPattern(n) {
+    /* 
+       1    
+       1 2   
+       1 2  3
+       1 2  3 4
+       1 2  3 4 5
+   */
+    let pattern = "";
+    for (let i = 0; i < n; i++) {
+        let row = ''
+
+        for (let j = 0; j < i; j++) {
+            row += j + 1
+
+        }
+        pattern += row + "\n"
+
+    }
+
+    return pattern;
+
+}
+
+// let result = thirdPattern(5)
+// console.log(result);
