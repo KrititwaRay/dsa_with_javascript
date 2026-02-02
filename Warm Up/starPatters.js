@@ -194,12 +194,13 @@ console.log(result); */
 
 
 
-function seventhPattern(n) {
+function eightPattern(n) {
     /*  1
         01
         010
         1010
-        10101 
+        10101
+        010101 
     */
     let pattern = "";
     let toggle = 1;
@@ -216,5 +217,5 @@ function seventhPattern(n) {
     return pattern;
 }
 
-/* let result = seventhPattern(5)
+/* let result = eightPattern(5)
 console.log(result); */
