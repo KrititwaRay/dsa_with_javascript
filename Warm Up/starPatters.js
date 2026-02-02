@@ -219,3 +219,37 @@ function eightPattern(n) {
 
 /* let result = eightPattern(5)
 console.log(result); */
+
+
+
+
+/* GFG Pattern */
+function ninthPattern(n){
+    /*
+    *****
+     ****
+      ***
+       **
+        *
+    */
+
+
+    let pattern = ""
+    for (let i = 0; i <= n; i++) {
+        let row = ""
+        for (let j = 0; j <= i - 1; j++) {
+            
+            row += " "
+        }
+        for (let j = 0; j < n - i + 1; j++) {
+            row += "*"
+        }
+        pattern += row + "\n"
+
+    }
+    return pattern
+}
+
+
+// let result = ninthPattern(5)
+// console.log(result);
