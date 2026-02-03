@@ -1,50 +1,8 @@
-
-
-function tenthPattern(n){
-
-
-        //     *
-        //    ***
-        //   *****
-        //  *******
-        // *********
-
-
-    let pattern = ""
-
-
-    for (let i = 0; i < n; i++) {
-
-        let row = ""
-        for (let j = 0; j < n - i - 1; j++) {
-            row += " "
-        }
-        for (let k = 0; k < 2 * i + 1; k++) {
-            row += "*";
-        }
-
-        pattern += row + "\n"
-    }
-
-    return pattern
-
-}
-
-// let result = tenthPattern(5)
-// console.log(result);
-
-
-
-
-
-
-
-
-
 /* 
+
     26. Remove Duplicates from Sorted Array
 
-    Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+    Given an integer array nums sorted in non-decreasing order(increasing and can have repeate), remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 
     Consider the number of unique elements in nums to be k​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements k.
 
@@ -66,6 +24,14 @@ function tenthPattern(n){
     It does not matter what you leave beyond the returned k (hence they are underscores).
 
 
+
+    Constraints:
+
+    1 <= nums.length <= 3 * 104
+    -100 <= nums[i] <= 100
+    nums is sorted in non-decreasing order.
+
+
 */
 
 
@@ -78,15 +44,10 @@ let removeDuplicates = function(nums) {
             nums[x] = nums[i]
         }
     }
-
     console.log(nums);
-    return x + 1
-
- 
-    
+    return x + 1;   
 };
 
 
 let nums = [0,0,1,1,1,2,2,3,3,4]
-
 console.log(removeDuplicates(nums));
