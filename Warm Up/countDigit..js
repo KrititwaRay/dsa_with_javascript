@@ -1,7 +1,5 @@
 function countDigit(number) {
 
-    if (number == 0) return 1
-
     // if negative number make positive
     number = Math.abs(number)
 
