@@ -5,7 +5,7 @@
 
     - Array is empty
     - Array has negative number
-    - Arrat has duplicates
+    - Array has duplicates
 
 */
 

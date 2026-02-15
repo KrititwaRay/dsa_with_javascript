@@ -137,6 +137,7 @@ function sixthPattern(n){
       ***
      ****
     ***** 
+    
     */
    
     let pattern = "";
