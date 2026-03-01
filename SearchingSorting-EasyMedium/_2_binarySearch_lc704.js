@@ -51,3 +51,27 @@ let arr = [-1, 0, 3, 5, 9, 12];
 let target = 9;
 let result = binarySearch(arr, target)
 console.log(result);
+
+
+
+
+function _2_binarySearch(arr, target, start = 0, end = arr.length - 1) {
+
+    if (start > end) return -1
+
+    let mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] === target) {
+        return {
+            "index": mid,
+            "value": arr[mid]
+        }
+    }
+
+    if (target > arr[mid]) {
+        return _2_binarySearch(arr, target, mid + 1, end)
+    }
+
+    return _2_binarySearch(arr, target, start, mid - 1)
+
+}
