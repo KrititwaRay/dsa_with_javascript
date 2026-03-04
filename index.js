@@ -83,10 +83,10 @@ MyLinkedList.prototype.addAtTail = function (val) {
     if (this.head == null) {
         this.head = newNode
 
-    }else{
+    } else {
         // REACH THE LAST ELIMENT
         let currentNode = this.head;
-    
+
         while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
@@ -96,8 +96,31 @@ MyLinkedList.prototype.addAtTail = function (val) {
 };
 
 
-MyLinkedList.prototype.addAtIndex = function(index, val) {
+MyLinkedList.prototype.addAtIndex = function (index, val) {
+    let newNode = new Node(val);
+
+    if (index == 0) {
+        this.addAtHead(val);
+        return
+    }
+
+    else if (index == this.size) {
+        this.addAtTail(val);
+        return
+    }
+
+    else {
+        let current = this.head;
+
+        for (let i = 0; i < index - 1; i++) {
+            current = current.next
+        }
+
+        newNode.next = current.next
+        current.next = newNode
+    }
     
+    this.size ++
 };
 
 
@@ -106,7 +129,11 @@ let list = new MyLinkedList()
 
 // list.addAtHead(5)
 // list.addAtHead(6)
-// list.addAtHead(7)
-list.addAtTail(100);
+list.addAtHead(1)
+list.addAtTail(2);
+list.addAtTail(3);
+list.addAtTail(4);
+list.addAtTail(5);
+list.addAtIndex(2, 700);
 // list.addAtHead(555)
 console.log("list ", JSON.stringify(list, null, 2));
