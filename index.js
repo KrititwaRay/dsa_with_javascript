@@ -124,6 +124,19 @@ MyLinkedList.prototype.addAtIndex = function (index, val) {
 };
 
 
+MyLinkedList.prototype.get = function(index) {
+    if(index < 0 || index >= this.size) return -1
+    let current = this.head;
+    if(!current) return -1;
+
+    for(let i = 0; i<=index; i++){
+
+        current = current.next
+    }
+    return current.val
+};
+
+
 
 let list = new MyLinkedList()
 
@@ -135,5 +148,7 @@ list.addAtTail(3);
 list.addAtTail(4);
 list.addAtTail(5);
 list.addAtIndex(2, 700);
+console.log(list.get(3));
+
 // list.addAtHead(555)
-console.log("list ", JSON.stringify(list, null, 2));
+// console.log("list ", JSON.stringify(list, null, 2));
