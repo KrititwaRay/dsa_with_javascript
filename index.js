@@ -144,7 +144,7 @@ list.addAtTail(40);
 list.addAtTail(50);
 
 
-list._2_middleNode()
+// list._2_middleNode()
 // console.log(JSON.stringify(list, null, 3));
 /* 
 

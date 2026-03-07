@@ -49,8 +49,7 @@ var _1_middleNode = function (head){
 /* array approach */
 var _2_middleNode = function (head){
     let arr = [];
-    let head = this.head;
-
+    
     while (head !== null) {
         arr.push(head);
         head = head.next;
