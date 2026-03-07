@@ -99,7 +99,7 @@ MyLinkedList.prototype.deleteAtIndex = function (index) {
 }
 
 
-MyLinkedList.prototype.middleNode = function (){
+MyLinkedList.prototype._1_middleNode = function (){
     let head = this.head;
 
     let slow = head;
@@ -113,6 +113,26 @@ MyLinkedList.prototype.middleNode = function (){
 
 
 }
+MyLinkedList.prototype._2_middleNode = function (){
+   
+    let arr = [];
+    let head = this.head;
+
+    while (head !== null) {
+        arr.push(head);
+        head = head.next;
+    }
+
+    let middle = Math.floor(arr.length / 2);
+
+    return arr[middle];
+
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+    */
+
+}
 
 
 let list = new MyLinkedList();
@@ -124,7 +144,7 @@ list.addAtTail(40);
 list.addAtTail(50);
 
 
-list.middleNode()
+list._2_middleNode()
 // console.log(JSON.stringify(list, null, 3));
 /* 
 

@@ -40,4 +40,28 @@ var _1_middleNode = function (head){
 
     return slow
 
+    /* 
+        Time Complexity: O(n/2) so O(n)
+        Space Complexity: O(1)
+    */
+}
+
+/* array approach */
+var _2_middleNode = function (head){
+    let arr = [];
+    let head = this.head;
+
+    while (head !== null) {
+        arr.push(head);
+        head = head.next;
+    }
+
+    let middle = Math.floor(arr.length / 2);
+
+    return arr[middle];
+
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+    */
 }
