@@ -25,3 +25,19 @@ The number of nodes in the list is in the range [1, 100].
 1 <= Node.val <= 100
 
 */
+
+
+
+/* fast and slow pointer */
+var _1_middleNode = function (head){
+    let slow = head;
+    let fast = head;
+
+    while(fast !== null && fast.next !== null ){
+        slow = slow.next;
+        fast = fast.next.next
+    }
+
+    return slow
+
+}
