@@ -133,6 +133,22 @@ MyLinkedList.prototype._2_middleNode = function (){
     */
 
 }
+MyLinkedList.prototype.reverseLinkedList = function (){
+   let current = this.head;
+   let previous = null;
+   
+   while(current != null){
+   
+    let temp = current.next
+    current.next = previous ; 
+    previous = current
+    current = temp
+
+   }
+   return previous
+   
+
+}
 
 
 let list = new MyLinkedList();
@@ -142,6 +158,7 @@ list.addAtTail(20);
 list.addAtTail(30);
 list.addAtTail(40);
 list.addAtTail(50);
+// list.reverseLinkedList();
 
 
 // list._2_middleNode()
