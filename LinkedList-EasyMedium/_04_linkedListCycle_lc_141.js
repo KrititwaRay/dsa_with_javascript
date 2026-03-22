@@ -88,8 +88,8 @@ const hasCycle_02 = function (head) {
   let slow = head
 
   while (fast && fast.next != null) {
-    fast = fast.next.next
     slow = slow.next
+    fast = fast.next.next
     if (fast === slow) return true
   }
 
