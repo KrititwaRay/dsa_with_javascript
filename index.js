@@ -1,87 +1,39 @@
-/* Intersection of Two Linked Lists */
-
-
-/* 
-List A: 10 → 20 → 30 → 40 → 50
-                         ↑
-List B:       15 → 25 ───┘
-
-*/
-
-
 class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
+    constructor(val) {
+        this.val = val
+        this.next = null
+    }
 }
 
-
-let common = new Node(40);
-common.next = new Node(50);
-
-
-let headA = new Node(10);
-headA.next = new Node(20);
-headA.next.next = new Node(30);
-
-// attach common part
-headA.next.next.next = common;
-
-
-let headB = new Node(15);
-headB.next = new Node(25);
-
-// attach same common nodes
-headB.next.next = common;
+let head = null
+head = new Node(1)
+head.next = new Node(2)
+head.next.next = new Node(6)
+head.next.next.next = new Node(3)
+head.next.next.next.next = new Node(4)
+head.next.next.next.next.next = new Node(5)
+head.next.next.next.next.next.next = new Node(6)
 
 
 
-const getIntersectionNode = function(headA, headB) {
+const removeElements = function (head, val) {
+   
+    let sentinalNode = new Node(0);
+    sentinalNode.next = head;
+    head = sentinalNode
+    let previous = sentinalNode;
 
-    let mySet = new Set();
+    while (previous && previous.next) {
+        if (previous.next.val == val) {
+            previous.next = previous.next.next
+        } else {
 
-    while(headB) {
-        mySet.add(headB)
-        headB = headB.next;
+            previous = previous.next;
+        }
     }
-
-    while(headA){
-        if(mySet.has(headA)) return headA;
-
-        headA = headA.next
-    }
-    return null
-    
-    /* 
-    
-    Time Complexity: O(m + n) 
-    Space Complexity: O(n)
-    
-    */
-    
+    head = head.next
+    return head
 };
 
 
-// let result = getIntersectionNode(headA, headB);
-
-// console.log(result)
-
-
-const getIntersectionNode_02 = function(headA, headB){
-    
-    let a = headA;
-    let b = headB;
-
-    while(a !== b){
-        a = (a!=null) ? a.next : headB;
-        b = (b!=null) ? b.next : headA;
-    }
-
-    return a;
-}
-
-
-let result_02 = getIntersectionNode_02(headA, headB);
-
-console.log(result_02)
+let result = removeElements(head, 6)
