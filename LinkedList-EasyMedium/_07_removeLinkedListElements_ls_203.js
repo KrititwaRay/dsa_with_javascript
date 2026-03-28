@@ -41,7 +41,7 @@ The number of nodes in the list is in the range [0, 10^4].
  */
 const removeElements = function (head, val) {
    
-    let sentinalNode = new Node(0);
+    let sentinalNode = new ListNode(0);
     sentinalNode.next = head;
     head = sentinalNode
     let previous = sentinalNode;
@@ -57,3 +57,21 @@ const removeElements = function (head, val) {
     head = head.next
     return head
 };
+
+
+
+class ListNode {
+    constructor(val) {
+        this.val = val
+        this.next = null
+    }
+}
+
+let head = null
+head = new ListNode(1)
+head.next = new ListNode(2)
+head.next.next = new ListNode(6)
+head.next.next.next = new ListNode(3)
+head.next.next.next.next = new ListNode(4)
+head.next.next.next.next.next = new ListNode(5)
+head.next.next.next.next.next.next = new ListNode(6)
