@@ -135,7 +135,7 @@ const getIntersectionNode_02 = function(headA, headB){
 
     List A: 10 → 20 → 30 → 40 → 50
                             ↑
-    List B:       15 → 25 ───┘
+    List B:      15 → 25 ───┘
 
 */
 
