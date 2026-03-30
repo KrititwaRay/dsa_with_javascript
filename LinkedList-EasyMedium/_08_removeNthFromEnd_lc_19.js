@@ -67,3 +67,43 @@ var removeNthFromEnd_1 = function (head, n) {
         Space Complexity: O(1)
     */
 };
+
+
+
+
+// One Pass
+let removeNthFromEnd_2 = function (head, n){
+    let sentinalNode = new ListNode(0);
+    sentinalNode.next = head;
+
+    let firstPointer = sentinalNode;
+   
+
+    // Move first pointer ahed by n
+    for (let i = 0; i < n; i++) {
+        firstPointer = firstPointer.next
+    }
+
+     let secondPointer = sentinalNode;
+    // move both pointer until first pointer reaches last node
+
+    while(firstPointer.next){
+        secondPointer = secondPointer.next
+        firstPointer = firstPointer.next
+    }
+    //delete 
+    secondPointer.next = secondPointer.next.next
+
+    return sentinalNode.next;
+
+
+    /* 
+    
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    
+    */
+
+
+}
+
