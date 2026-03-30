@@ -1,55 +1,48 @@
-class Node{
-    constructor(val){
+class Node {
+    constructor(val) {
         this.val = val
         this.next = null
     }
 }
-let head = null;
 
+
+let head = null
 head = new Node(10)
-let first = new Node(20)
-let second = new Node(30)
-let third = new Node(40)
-let firth = new Node(50)
-
-head.next = first;
-first.next = second;
-second.next = third;
-third.next = firth;
-firth.next = first;
+head.next = new Node(12)
+head.next.next = new Node(13)
+head.next.next.next = new Node(14)
+head.next.next.next.next = new Node(15)
+head.next.next.next.next.next = new Node(16)
 
 
-
-function findCycleStart(head) {
+function removeNthFromLast(head, position) {
     if (!head) return null;
 
-    let slow = head;
-    let fast = head;
+    let sentinalNode = new Node(0);
+    sentinalNode.next = head;
 
-    while(fast && fast.next){
+    let length = 0;
 
-        slow = slow.next;
-        fast = fast.next.next;
-
-        if(slow === fast) {
-
-            let part1 = head;
-            let part2 = slow;
-
-            while(part1 != part2){
-                part1 = part1.next;
-                part2 = part2.next;
-            }
-
-            return part1.val
-
-        }
+    while (head) {
+        length++
+        head = head.next;
     }
 
-  return null
+    let deletePos = length - position;
+
+    let previosuNode = sentinalNode;
+
+    for(let i = 0; i <  deletePos; i++){
+        previosuNode = previosuNode.next
+    }
+    previosuNode.next = previosuNode.next.next
+    
+    return sentinalNode.next
+
+    // time complexity  = O(m) + O(n)  -> O(m)
+    // spcae complexity  = O(1)
 
 }
 
-
-let result = findCycleStart(head);
+let result = removeNthFromLast(head, 1);
 console.log(JSON.stringify(result, null, 2));
