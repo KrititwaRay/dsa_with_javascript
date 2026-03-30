@@ -4,6 +4,7 @@ class Node{
         this.next = null
     }
 }
+
 let head = null;
 
 head = new Node(10)
@@ -48,8 +49,16 @@ function findCycleStart(head) {
 
   return null
 
+
+  /* 
+  
+  Time Complexity: O(n)
+  Space Complexity: O(1)
+  
+  */
+
 }
 
 
 let result = findCycleStart(head);
-console.log(JSON.stringify(result, null, 2));
+console.log("result ", result);
