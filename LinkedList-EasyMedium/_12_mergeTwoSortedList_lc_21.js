@@ -45,6 +45,7 @@ Both list1 and list2 are sorted in non-decreasing order.
  * @return {ListNode}
  */
 
+
 class ListNode {
     constructor(val) {
         this.val = val
@@ -63,6 +64,11 @@ list2.next = new ListNode(3)
 list2.next.next = new ListNode(4)
 list2.next.next.next = new ListNode(6)
 list2.next.next.next.next = new ListNode(9)
+
+
+
+
+
 
 
 
@@ -112,10 +118,6 @@ var mergeTwoLists_1 = function (l1, l2) {
 
 var mergeTwoLists_2 = function (l1, l2) {
 
-    if (!l1) return l2
-
-    if (!l2) return l1
-
     let sentinalNode = new ListNode(0)
 
     let current = sentinalNode;
@@ -139,6 +141,13 @@ var mergeTwoLists_2 = function (l1, l2) {
     }
 
     return sentinalNode.next
+
+    /* 
+    
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    
+    */
 };
 
 
