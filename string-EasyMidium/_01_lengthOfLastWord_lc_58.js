@@ -34,7 +34,6 @@ There will be at least one word in s.
 */
 
 
-
 /**
  * @param {string} s
  * @return {number}
@@ -110,6 +109,6 @@ var lengthOfLastWord_2 = function (s) {
 
 
 
-let str = "hello world  "
-let result = lengthOfLastWord_2(str)
-console.log(result)
+// let str = "hello world  "
+// let result = lengthOfLastWord_2(str)
+// console.log(result)
