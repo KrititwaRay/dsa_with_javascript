@@ -67,7 +67,3 @@ var findWordsContaining = function(words, x) {
     
     */
 };
-
-
-let result = findWordsContaining(["abc","bcd","aaaa","cbc"], 'a')
-console.log(result)
