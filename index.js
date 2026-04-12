@@ -1,73 +1,100 @@
-/* 2942. Find Words Containing Character */
-
+/* 61. Rotate List */
 
 /* 
-
-You are given a 0-indexed array of strings words and a character x.
-
-Return an array of indices representing the words that contain the character x.
-
-Note that the returned array may be in any order.
-
+Given the head of a linked list, rotate the list to the right by k places.
 
 Example 1:
-Input: words = ["leet","code"], x = "e"
-Output: [0,1]
-Explanation: "e" occurs in both words: "leet", and "code". Hence, we return indices 0 and 1.
-
-
+Input: head = [1,2,3,4,5], k = 2
+Output: [4,5,1,2,3]
 
 Example 2:
-Input: words = ["abc","bcd","aaaa","cbc"], x = "a"
-Output: [0,2]
-Explanation: "a" occurs in "abc", and "aaaa". Hence, we return indices 0 and 2.
+nput: head = [0,1,2], k = 4
+Output: [2,0,1]
 
-
-Example 3:
-Input: words = ["abc","bcd","aaaa","cbc"], x = "z"
-Output: []
-Explanation: "z" does not occur in any of the words. Hence, we return an empty array.
- 
 
 Constraints:
 
-1 <= words.length <= 50
-1 <= words[i].length <= 50
-x is a lowercase English letter.
-words[i] consists only of lowercase English letters.
+The number of nodes in the list is in the range [0, 500].
+-100 <= Node.val <= 100
+0 <= k <= 2 * 10^9
+
+
 
 */
 
 
 /**
- * @param {string[]} words
- * @param {character} x
- * @return {number[]}
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
  */
-var findWordsContaining = function(words, x) {
-    let arr = [];
-    for (let i = 0; i < words.length; i++) {
-        for (let j = 0; j < words[i].length; j++) {
-            if (words[i].charAt(j) === x) {
-                arr.push(i)
-                break;
-            }
-        }
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+
+class ListNode {
+    constructor(val){
+        this.val = val
+        this.next = null
+    }
+}
+
+let head = new ListNode(1)
+ head.next = new ListNode(2)
+ head.next.next = new ListNode(3)
+ head.next.next.next = new ListNode(4)
+ head.next.next.next.next = new ListNode(5)
+
+var rotateRight = function(head, k) {
+    if(!head || !head.next) return head;
+
+    let length = 0;
+    let current = head
+
+    while(current){
+        current = current.next
+        length++
     }
 
-    return arr
+    k = k % length;
 
-    /* 
-    
-    m: No of words
-    n: Max length of each words
+    let slow = head
+    let fast = head
 
-    Time Complexity: O(m*n)
-    Space Complexity: O(1)
     
-    */
+
+    for (let i = 0; i < k; i++) {
+        fast = fast.next
+    }
+
+   while(fast.next){
+    slow = slow.next
+    fast = fast.next
+   }
+   fast.next = head;
+   let newHead = slow.next;
+   slow.next = null;
+
+   return newHead
+
+
+   /* 
+   Time Complexity: O(n)
+   Space Complexity: O(1)
+   
+   */
+
+    
 };
 
 
-let result = findWordsContaining(["abc","bcd","aaaa","cbc"], 'a')
-console.log(result)
+
+
+
+let result = rotateRight(head, 3);
+
+console.log(JSON.stringify(result, null, 2))
