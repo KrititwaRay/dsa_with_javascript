@@ -1,109 +1,133 @@
-/* 3541. Find Most Frequent Vowel and Consonant */
+/* 225. Implement Stack using Queues */
 
 /* 
 
-You are given a string s consisting of lowercase English letters ('a' to 'z').
+Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
 
-Your task is to:
+Implement the MyStack class:
+void push(int x) Pushes element x to the top of the stack.
 
-Find the vowel (one of 'a', 'e', 'i', 'o', or 'u') with the maximum frequency.
+int pop() Removes the element on the top of the stack and returns it.
 
-Find the consonant (all other letters excluding vowels) with the maximum frequency.
+int top() Returns the element on the top of the stack.
 
-Return the sum of the two frequencies.
+boolean empty() Returns true if the stack is empty, false otherwise.
 
-Note: If multiple vowels or consonants have the same maximum frequency, you may choose any one of them. If there are no vowels or no consonants in the string, consider their frequency as 0.
+Notes:
 
-The frequency of a letter x is the number of times it occurs in the string.
+You must use only standard operations of a queue, which means that only push to back, peek/pop from front, size and is empty operations are valid.
+
+Depending on your language, the queue may not be supported natively. You may simulate a queue using a list or deque (double-ended queue) as long as you use only a queue's standard operations.
 
 
 Example 1:
-Input: s = "successes"
 
-Output: 6
+Input:
 
-Explanation:
+["MyStack", "push", "push", "top", "pop", "empty"]
 
-The vowels are: 'u' (frequency 1), 'e' (frequency 2). The maximum frequency is 2.
+[[], [1], [2], [], [], []]
 
-The consonants are: 's' (frequency 4), 'c' (frequency 2). The maximum frequency is 4.
+Output:
 
-The output is 2 + 4 = 6.
-
-
-
-Example 2:
-Input: s = "aeiaeia"
-
-Output: 3
+[null, null, null, 2, 2, false]
 
 Explanation:
-
-The vowels are: 'a' (frequency 3), 'e' ( frequency 2), 'i' (frequency 2). The maximum frequency is 3.
-
-There are no consonants in s. Hence, maximum consonant frequency = 0.
-
-The output is 3 + 0 = 3.
+MyStack myStack = new MyStack();
+myStack.push(1);
+myStack.push(2);
+myStack.top(); // return 2
+myStack.pop(); // return 2
+myStack.empty(); // return False
 
 
 Constraints:
+1 <= x <= 9
 
-1 <= s.length <= 100
-s consists of lowercase English letters only.
+At most 100 calls will be made to push, pop, top, and empty.
 
+All the calls to pop and top are valid.
 
 */
 
-
-/**
- * @param {string} s
- * @return {number}
- */
-
-
-
-let str = "successes";
-var maxFreqSum = function (s) {
-
-    let map = new Map();
-    let maxVowel = 0;
-    let maxConsonant = 0;
-
-
-    for (let i = 0; i < s.length; i++) {
-        if (!map.has(s.charAt(i))) {
-            map.set(s.charAt(i), 1)
-        } else {
-            let valCount = map.get(s.charAt(i))
-            map.set(s.charAt(i), ++valCount)
-        }
-
-
-    }
-
-    let vowelsSet = new Set(['a', 'e', 'i', 'o', 'u']);
-
-    // check each character
-    for (let [ch, freq] of map) {
-        if (vowelsSet.has(ch)) {
-            maxVowel = Math.max(maxVowel, freq);
-        } else {
-            maxConsonant = Math.max(maxConsonant, freq);
-        }
-    }
-
-    return maxVowel + maxConsonant; 
-
-
-    /* 
+var MyStack = function() {
+    this.q1 = [];
+    this.q2 = [];
     
-    Time Complexity: O(n)
-    Space Complexity: O(1)
-    
-    */
-
 };
 
 
-let result = maxFreqSum(str);
-console.log(result)
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyStack.prototype.push = function(x) {
+    this.q1.push(x)
+};
+
+
+/**
+ * @return {number}
+ */
+
+MyStack.prototype.pop = function() {
+    let n = this.q1.length;
+    for (let i = 0; i < n - 1; i++) {
+        let frontElem = this.q1.shift();
+        this.q2.push(frontElem)   
+    }
+    let ans = this.q1.shift();
+
+    //Exchange q1 and q2
+
+    let tempQ = this.q1;
+    this.q1 = this.q2;
+    this.q2 = tempQ;
+
+    return ans;
+
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.top = function() {
+
+    let n = this.q1.length;
+
+    for (let i = 0; i < n - 1; i++) {
+        let firstElem = this.q1.shift();
+        this.q2.push(firstElem)
+    }
+    let frontElem = this.q1[0];
+    this.q2.push(frontElem)
+
+    let tempQ = this.q1;
+    this.q1 = this.q2;
+    this.q2 = tempQ;
+    this.q2.shift()
+
+    return frontElem;
+};
+
+/**
+ * @return {boolean}
+ */
+MyStack.prototype.empty = function () {
+
+    if (this.q1.length === 0) return true
+    return false
+
+};
+
+let stack = new MyStack(); 
+stack.push(10);
+stack.push(20);
+// console.log(stack.pop())
+// console.log(stack.top())
+console.log(stack.empty())
+
+
+
+
+console.log("stack  -> ", stack)
