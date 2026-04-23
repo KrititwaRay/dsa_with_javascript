@@ -5,6 +5,9 @@ class Stack {
 
     push(val) {
         this.q.push(val);
+        /* 
+        Time Complexity: O(1)
+        */
     }
 
     pop() {
@@ -17,7 +20,11 @@ class Stack {
             this.q.push(this.q.shift())
         }
 
-        return this.q.shift()
+        return this.q.shift();
+
+        /* 
+        Time Complexity: O(n)
+        */
     }
 
     top() {
@@ -31,10 +38,17 @@ class Stack {
         this.q.push(ans);
 
         return ans;
+
+        /* 
+        Time Complexity: O(n)
+        */
     }
 
     isEmpty() {
         return this.q.length === 0;
+        /* 
+        Time Complexity: O(1)
+        */
     }
 }
 
