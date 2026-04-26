@@ -125,7 +125,7 @@ stack.push(10);
 stack.push(20);
 // console.log(stack.pop())
 // console.log(stack.top())
-console.log(stack.empty())
+// console.log(stack.empty())
 
 
 
