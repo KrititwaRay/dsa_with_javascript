@@ -62,8 +62,8 @@ var isValid_1 = function (str) {
 
     /* 
     
-    Time Complexity:
-    Space Complexity:
+    Time Complexity: O(n)
+    Space Complexity: O(n)
     
     */
 };
@@ -95,8 +95,8 @@ var isValid_2 = function (str) {
 
     /* 
     
-        Time Complexity:
-        Space Complexity:
+        Time Complexity: O(n)
+        Space Complexity: O(n)
     
     */
 };
