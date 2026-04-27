@@ -63,6 +63,10 @@ var MyQueue = function() {
  */
 MyQueue.prototype.push = function (x) {
     this.s1.push(x);
+
+    /* 
+    Time Complexity: O(1)
+    */
 };
 
 
@@ -78,6 +82,11 @@ MyQueue.prototype.pop = function () {
 
     }
     return this.s2.pop()
+
+    /* 
+    Time Complexity: O(n) Worst Case
+    Avg Case O(1)
+    */
 
 };
 
@@ -95,6 +104,11 @@ MyQueue.prototype.peek = function () {
         }
     }
     return this.s2[this.s2.length - 1]
+
+    /* 
+    Time Complexity: O(n) Worst Case
+    Avg Case O(1)
+    */
 };
 
 /**
@@ -103,6 +117,11 @@ MyQueue.prototype.peek = function () {
 
 MyQueue.prototype.empty = function () {
     return this.s1.length === 0 && this.s2.length === 0;
+
+    /* 
+    Time Complexity: O(1) Worst Case
+   
+    */
 };
 
 /** 
