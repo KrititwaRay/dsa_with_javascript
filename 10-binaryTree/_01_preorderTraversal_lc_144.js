@@ -97,6 +97,8 @@ let root = buildFromArray(arr);
 /* Recursive  */
 function preorderTraversal(root) {
 
+    //root -> left -> right
+
     let ans = [];
 
     function traversal(current) {
