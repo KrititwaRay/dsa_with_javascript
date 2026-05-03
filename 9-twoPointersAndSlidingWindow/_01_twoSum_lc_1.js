@@ -63,6 +63,22 @@ var twoSum_01 = function(nums, target) {
     */
 };
 
+function twoSum_03(arr, target) {
+    let map = new Map();
+    for(let i = 0; i < arr.length; i++){
+        map.set(arr[i], i)
+    }
+
+    for(let i = 0; i < arr.length; i++){
+        let targetVal = target - arr[i]
+        
+        if(map.get(targetVal) && map.get(targetVal) != i){
+            return [i , map.get(targetVal)]
+        }
+    }
+}
+
+
 // let result = twoSum_01(nums, target);
 // console.log(result)
 
