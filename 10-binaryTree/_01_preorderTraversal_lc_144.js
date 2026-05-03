@@ -95,7 +95,7 @@ let root = buildFromArray(arr);
 
 
 /* Recursive  */
-function preorderTraversal(root) {
+function preorderTraversal_1(root) {
 
     //root -> left -> right
 
@@ -114,5 +114,31 @@ function preorderTraversal(root) {
 }
 
 
-let result = preorderTraversal(root);
+// let result = preorderTraversal_1(root);
+// console.log("result: ", result);
+
+
+
+// iterative
+function preorderTraversal_2(root) {
+
+    //root -> left -> right
+    
+    if (!root) return [];
+    let ans = [];
+    let stack = [root];
+
+    while (stack.length) {
+        let current = stack.pop();
+        ans.push(current.val);
+
+        current.right && stack.push(current.right);
+        current.left && stack.push(current.left);
+
+    }
+
+    return ans;
+}
+
+let result = preorderTraversal_2(root);
 console.log("result: ", result);
