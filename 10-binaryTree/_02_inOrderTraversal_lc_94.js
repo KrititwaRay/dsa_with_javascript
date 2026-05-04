@@ -94,7 +94,7 @@ let root = buildFromArray(arr);
 
 
 
-var inorderTraversal = function(root) {
+var inorderTraversal_1 = function(root) {
     // left -> root -> right
 
     let ans = [];
@@ -114,5 +114,28 @@ var inorderTraversal = function(root) {
     
 };
 
-let result = inorderTraversal(root);
-console.log(result)
+
+
+// let result = inorderTraversal_1(root);
+// console.log(result)
+
+
+function inorderTraversal_2(root){
+    let ans = [];
+    let current = root;
+    let stack = [];
+
+    while (current || stack.length) {
+        while (current) {
+
+            stack.push(current);
+            current = current.left;
+
+        }
+        current = stack.pop();
+        ans.push(current.val);
+        current = current.right;
+    }
+
+    return ans;
+}
