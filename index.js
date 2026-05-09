@@ -1,70 +1,46 @@
-class TreeNode {
+class ListNode {
     constructor(val){
         this.val = val;
-        this.left = null;
-        this.right = null;
+        this.next = null;
     }
-
 }
 
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
 
 
-function buildFromArray (arr){
-    if(!arr.length) return null;
 
-    let root = new TreeNode(arr[0]);
+// iterative
+var swapPairs = function (head) {
+    if (!head || head.next === null) return head;
 
-    let queue = [root];
-    let i = 1;
+    let sentinalNode = new ListNode(0);
+
+    sentinalNode.next = head;
+
+    let p = sentinalNode;
+    let c = head;
+    let n = head.next;
 
 
-    while(i < arr.length){
-        let current = queue.shift();
+    while(c && n){
+        p.next = n;
+        c.next = n.next;
+        n.next = c;
 
-        if(arr[i] ){
-            current.left = new TreeNode(arr[i]);
-            queue.push(current.left)
-        
-        }
-        i++
-        if(i < arr.length && arr[i] ) {
-            current.right = new TreeNode(arr[i]);
-            queue.push(current.right)
-        }
-        i++
+
+        p = c;
+        c = p.next;
+        n = c && c.next
+
     }
 
-    return root;
-}
+    return sentinalNode.next;
 
 
-let arr = [1,2,3,4,5,null,8,null,null,6,7,9];
-let root = buildFromArray (arr);
+};
 
-
-
-
-function preOrderTraversal(root){
-    // root left right
-
-    if(!root) return [];
-    let ans = [];
-    let stack = [root];
-
-
-    while(stack.length != 0){
-        let current = stack.pop();
-
-        ans.push(current.val);
-        current.right && stack.push(current.right)
-        current.left && stack.push(current.left)
-        
-    }
-
-
-    return ans;
-
-}
-
-let result = preOrderTraversal(root);
-console.log(result)
+let result = swapPairs(head);
+console.log(JSON.stringify(result, null, 2))
