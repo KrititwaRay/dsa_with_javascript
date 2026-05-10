@@ -52,19 +52,36 @@ Constraints:
 
 // Top down
 var maxDepth_1 = function (root) {
-    if (!root) return 0;
-    let maxDepth = 0;
+        if (!root) return 0;
+        let maxDepth = 0;
 
-    function traversal(current, depth) {
-        maxDepth = Math.max(maxDepth, depth);
+        function traversal(current, depth) {
+                maxDepth = Math.max(maxDepth, depth);
 
-        current.left && traversal(current.left, depth + 1);
-        current.right && traversal(current.right, depth + 1);
-    }
-    traversal(root, 1);
-    return maxDepth
+                current.left && traversal(current.left, depth + 1);
+                current.right && traversal(current.right, depth + 1);
+        }
+        traversal(root, 1);
+        return maxDepth
 
 };
 
 // let result = maxDepth_1(root);
 // console.log(result)
+
+
+
+
+// Bottom down
+var maxDepth_2 = function (root) {
+        if (!root) return 0;
+
+        let maxDepthLeft = maxDepth_2(root.left);
+        let maxDepthRight = maxDepth_2(root.right);
+
+        return 1 + Math.max(maxDepthLeft, maxDepthRight)
+
+};
+
+let result = maxDepth_2(root);
+console.log(result)

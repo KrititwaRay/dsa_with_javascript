@@ -42,21 +42,16 @@ let arr = [3, 9, 20, null, null, 15, 7]
 let root = buildFromArray(arr);
 
 
-// Top down
-var maxDepth_1 = function (root) {
+// Bottom down
+var maxDepth_2 = function (root) {
     if (!root) return 0;
-    let maxDepth = 0;
 
-    function traversal(current, depth) {
-        maxDepth = Math.max(maxDepth, depth);
+    let maxDepthLeft = maxDepth_2(root.left);
+    let maxDepthRight = maxDepth_2(root.right);
 
-        current.left && traversal(current.left, depth + 1);
-        current.right && traversal(current.right, depth + 1);
-    }
-    traversal(root, 1);
-    return maxDepth
+    return 1 + Math.max(maxDepthLeft, maxDepthRight)
 
 };
 
-let result = maxDepth_1(root);
+let result = maxDepth_2(root);
 console.log(result)
