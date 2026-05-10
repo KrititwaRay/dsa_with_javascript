@@ -1,46 +1,62 @@
-class ListNode {
-    constructor(val){
+class TreeNode {
+    constructor(val) {
         this.val = val;
-        this.next = null;
+        this.left = null;
+        this.right = null;
     }
 }
 
-let head = new ListNode(1);
-head.next = new ListNode(2);
-head.next.next = new ListNode(3);
-head.next.next.next = new ListNode(4);
 
+function buildFromArray(arr) {
+    if (!arr.length) return null;
 
+    let root = new TreeNode(arr[0]);
+    let queue = [root];
+    let i = 1;
 
-// iterative
-var swapPairs = function (head) {
-    if (!head || head.next === null) return head;
+    while (i < arr.length) {
+        let current = queue.shift();
 
-    let sentinalNode = new ListNode(0);
+        if (arr[i]) {
+            current.left = new TreeNode(arr[i]);
+            queue.push(current.left)
 
-    sentinalNode.next = head;
+        }
+        i++;
 
-    let p = sentinalNode;
-    let c = head;
-    let n = head.next;
+        if (arr[i] && i < arr.length) {
+            current.right = new TreeNode(arr[i]);
+            queue.push(current.right)
 
+        }
+        i++;
 
-    while(c && n){
-        p.next = n;
-        c.next = n.next;
-        n.next = c;
-
-
-        p = c;
-        c = p.next;
-        n = c && c.next
 
     }
+    return root;
 
-    return sentinalNode.next;
+}
 
+
+let arr = [3, 9, 20, null, null, 15, 7]
+let root = buildFromArray(arr);
+
+
+// Top down
+var maxDepth_1 = function (root) {
+    if (!root) return 0;
+    let maxDepth = 0;
+
+    function traversal(current, depth) {
+        maxDepth = Math.max(maxDepth, depth);
+
+        current.left && traversal(current.left, depth + 1);
+        current.right && traversal(current.right, depth + 1);
+    }
+    traversal(root, 1);
+    return maxDepth
 
 };
 
-let result = swapPairs(head);
-console.log(JSON.stringify(result, null, 2))
+let result = maxDepth_1(root);
+console.log(result)
