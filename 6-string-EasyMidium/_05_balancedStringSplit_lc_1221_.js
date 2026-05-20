@@ -44,10 +44,55 @@ s is a balanced string.
 
 let str = "LLLLRRRR"
 
-var balancedStringSplit = function(s) {
-    
+var balancedStringSplit_01 = function (s) {
+    let R = 0;
+    let L = 0;
+    let count = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s.charAt(i) === 'R') {
+            R++
+        } else {
+            L++
+        }
+
+        if (R === L) {
+            count++
+            R = 0;
+            L = 0;
+        }
+    }
+
+    return count;
 };
 
 
-let result = balancedStringSplit(str)
+
+// let result = balancedStringSplit_01(str)
+// console.log(result)
+
+
+function balancedStringSplit_02(s) {
+
+    let temp = 0;
+    let count = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s.charAt(i) === 'R') {
+            temp++
+        } else {
+            temp--
+        }
+
+        if (temp === 0) {
+            count++
+        }
+    }
+
+    return count;
+
+}
+
+
+let result = balancedStringSplit_02(s);
 console.log(result)
