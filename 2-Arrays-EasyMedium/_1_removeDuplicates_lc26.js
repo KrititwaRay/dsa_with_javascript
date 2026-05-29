@@ -44,7 +44,7 @@ let removeDuplicates = function(nums) {
             nums[x] = nums[i]
         }
     }
-    console.log(nums);
+
     return x + 1;   
 };
 
