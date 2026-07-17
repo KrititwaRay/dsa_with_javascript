@@ -1,5 +1,3 @@
-/* LINKED LIST */
-
 class Node {
     constructor(val) {
         this.val = val;
