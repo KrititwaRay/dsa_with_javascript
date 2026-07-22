@@ -41,6 +41,24 @@ var reverseString = function(s) {
     
 };
 
+
+
+
 let arr =  ["H","a","n","n","a","h"];
 let result  = reverseString(arr);
 console.log(result);
+
+
+
+
+const reverseString_1 = function (s) {
+
+    for (let i = 0; i < Math.floor(s.length / 2); i++) {
+        let temp = s[i];
+
+        s[i] = s[s.length - 1 - i];
+
+        s[s.length - 1 - i] = temp;
+    }
+
+}
