@@ -25,6 +25,13 @@ All the integers in nums are unique.
 nums is sorted in ascending order.
 */
 
+
+
+/* 
+
+Time Complexity: (O(log n))
+
+*/
 function binarySearch(arr, target) {
     let start = 0;
     let end = arr.length - 1;
