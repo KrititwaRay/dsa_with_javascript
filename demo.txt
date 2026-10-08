@@ -1,47 +1,49 @@
 🔥 Array — Must Know
 #	Question	Difficulty
-1	Find the largest and smallest element -	Easy
-2	Reverse an array	Easy
-3	Remove duplicates from an array	Easy
-4	Find the second largest element	Easy
-5	Find missing number from 1..n	Easy
-6	Find duplicate number	Easy/Medium
-7	Two Sum	Easy/Medium
-8	Move all zeros to the end	Easy
-9	Merge two sorted arrays	Easy/Medium
-10	Find intersection of two arrays	Easy/Medium
-11	Find union of two arrays	Easy/Medium
-12	Rotate array by K positions	Medium
-13	Maximum subarray sum — Kadane's Algorithm	Medium
-14	Best time to buy and sell stock	Easy/Medium
-15	Majority element	Medium
-16	Product of array except self	Medium
-17	3Sum	Medium
-18	Sort 0s, 1s and 2s	Medium
-19	Subarray with given sum	Medium
-20	Longest consecutive sequence	Medium
+1	Find the largest and smallest element -	((Easy))
+2	Reverse an array	(Easy)
+3	Remove duplicates from an array	(Easy)
+4	Find the second largest element	(Easy)
+5	Find missing number from 1..n	(Easy)
+6	Find duplicate number	(Easy)/(Medium)
+7	Two Sum	(Easy)/(Medium)
+8	Move all zeros to the end	(Easy)
+9	Merge two sorted arrays	(Easy)/(Medium)
+10	Find intersection of two arrays	(Easy)/(Medium)
+11	Find union of two arrays	(Easy)/(Medium)
+12	Rotate array by K positions	(Medium)
+13	Maximum subarray sum — Kadane's Algorithm	(Medium)
+14	Best time to buy and sell stock	(Easy)/(Medium)
+15	Majority element	(Medium)
+16	Product of array except self	(Medium)
+17	3Sum	(Medium)
+18	Sort 0s, 1s and 2s	(Medium)
+19	Subarray with given sum	(Medium)
+20	Longest consecutive sequence	(Medium)
+
+
 🔥 String — Must Know
 #	Question	Difficulty
-1	Reverse a string	Easy
-2	Check palindrome	Easy
-3	Count character frequency	Easy
-4	Find first non-repeating character	Easy/Medium
-5	Check if two strings are anagrams	Easy
-6	Remove duplicate characters	Easy
-7	Count vowels/consonants	Easy
-8	Reverse words in a string	Easy/Medium
-9	Find longest word	Easy
-10	Check if one string is rotation of another	Medium
-11	Longest substring without repeating characters	Medium
-12	Longest palindromic substring	Medium/Hard
-13	Group anagrams	Medium
-14	String compression	Medium
-15	Valid parentheses	Easy/Medium
-16	Implement substring search	Medium
-17	Check balanced brackets	Easy/Medium
+1	Reverse a string	(Easy)
+2	Check palindrome	(Easy)
+3	Count character frequency	(Easy)
+4	Find first non-repeating character	(Easy)/(Medium)
+5	Check if two strings are anagrams	(Easy)
+6	Remove duplicate characters	(Easy)
+7	Count vowels/consonants	(Easy)
+8	Reverse words in a string	(Easy)/(Medium)
+9	Find longest word	(Easy)
+10	Check if one string is rotation of another	(Medium)
+11	Longest substring without repeating characters	(Medium)
+12	Longest palindromic substring	(Medium)/Hard
+13	Group anagrams	(Medium)
+14	String compression	(Medium)
+15	Valid parentheses	(Easy)/(Medium)
+16	Implement substring search	(Medium)
+17	Check balanced brackets	(Easy)/(Medium)
 18	Minimum window substring	Hard
-19	Longest common prefix	Easy
-20	Run-length encoding	Easy/Medium
+19	Longest common prefix	(Easy)
+20	Run-length encoding	(Easy)/(Medium)
 
 
 
