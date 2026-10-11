@@ -1,29 +1,21 @@
 
 
-let str = "I love JavaScript";
-function reverseWords(str) {
-    let result = "";
-    let word = "";
 
-    for (let i = str.length - 1; i >= 0; i--) {
-        let char = str.charAt(i);
 
-        if (char !== " ") {
-            word = char + word;
-        } else {
-            if (word.length > 0) {
-                result += word + " ";
-                word = "";
-            }
-        }
-    }
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 
-    // Add the first word
-    if (word.length > 0) {
-        result += word;
-    }
+let arr = [11, 2, 2, 3, 3, 4, 4, 4, 5, 7, 7, 8, 8, 8, 8, 8, 10];
+let target = 8
 
-    return result;
-}
+var searchRange = function (arr, target) {
 
-console.log(reverseWords("I love JavaScript"));
+};
+
+
+let result = searchRange(arr, target)
+
+console.log(result)
