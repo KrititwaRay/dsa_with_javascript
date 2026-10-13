@@ -1,21 +1,17 @@
-
-
-
-
 /**
  * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
+ * @return {number}
  */
 
-let arr = [11, 2, 2, 3, 3, 4, 4, 4, 5, 7, 7, 8, 8, 8, 8, 8, 10];
-let target = 8
 
-var searchRange = function (arr, target) {
-
+let arr = [1,1,2,3,3,4,4,8,8];
+var singleNonDuplicate = function(arr) {
+    
 };
 
 
-let result = searchRange(arr, target)
+
+
+let result = singleNonDuplicate(arr);
 
 console.log(result)
