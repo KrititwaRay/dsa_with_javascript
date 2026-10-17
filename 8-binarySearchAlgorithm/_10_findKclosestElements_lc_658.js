@@ -29,3 +29,29 @@ arr is sorted in ascending order.
 -10^4 <= arr[i], x <= 10^4
 
 */
+
+
+
+/**
+ * @param {number[]} arr
+ * @param {number} k
+ * @param {number} x
+ * @return {number[]}
+ */
+var findClosestElements = function (arr, k, x) {
+    let s = 0;
+    let e = arr.length - 1;
+
+
+    while (s < e) {
+        let mid = s + Math.floor((e - s) / 2);
+        if (arr[mid + k] - x < x - arr[mid]) {
+            s = mid + 1
+        } else {
+            e = mid;
+        }
+    }
+
+    return arr.slice(s, s + k)
+
+};
